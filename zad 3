@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, c;
+    cout << "Podaj wartosci a, b, c rozdzielajac je spacjami: ";
+    cin >> a >> b >> c;
+
+    cout << "Wprowadzone liczby to: " << a << " " << b << " " << c << endl;
+
+    int min, max;
+
+    if(a > b) {
+        max = a;
+        min = b;
+    } else {
+        max = b;
+        min = a;
+    }
+
+    if(c < min) {
+        cout << "Wypisuje liczby rosnaco: " << c << " " << min << " " << max << endl;
+    } else if(c < max) {
+        cout << "Wypisuje liczby rosnaco: " << min << " " << c << " " << max << endl;
+    } else {
+        cout << "Wypisuje liczby rosnaco: " << min << " " << max << " " << c << endl;
+    }
+
+    cout << "Aby kontynuowac, nacisnij dowolny klawisz . . . ";
+    return 0;
+}

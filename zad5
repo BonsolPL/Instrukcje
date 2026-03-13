@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<textarea id="tekst"></textarea>
+<p id="info"></p>
+<input id="szukaj" placeholder="Znajdź">
+<input id="zamien" placeholder="Zamień">
+
+<button onclick="zamien()">Znajdź i zamień</button>
+<button onclick="cenzura()">Wyczyść wulgaryzmy</button>
+<script>
+let pole=document.getElementById("tekst");
+pole.addEventListener("input",function(){
+let t=pole.value;
+let znaki=t.length;
+let slowa=t.split(" ").filter(x=>x!="").length;
+let czas=(slowa/200).toFixed(2);
+document.getElementById("info").textContent="Znaki:"+znaki+" Słowa:"+slowa+" Czas:"+czas+" min";
+});
+function cenzura(){
+let t=pole.value;
+let lista=["kurka","motyla noga"];
+lista.forEach(w=>{
+t=t.replaceAll(w,"*****");
+});
+pole.value=t;
+}
+function zamien(){
+let s=document.getElementById("szukaj").value;
+let z=document.getElementById("zamien").value;
+pole.value=pole.value.replaceAll(s,z);
+}
+</script>
+</body>
+</html>

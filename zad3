@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<input id="pesel" placeholder="PESEL">
+<button onclick="sprawdz()">Sprawdź</button>
+<p id="wynik"></p>
+<script>
+function sprawdz(){
+let pesel = document.getElementById("pesel").value;
+let wynik = document.getElementById("wynik");
+if(pesel.length==11){
+wynik.style.color="green";
+wynik.textContent="*******"+pesel.slice(-4);
+}else{
+wynik.style.color="red";
+wynik.textContent="Błąd";
+}
+}
+</script>
+</body>
+</html>

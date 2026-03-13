@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+let dane = "Szymon;Kowalski;28;Gdańsk";
+let nazwisko = dane.split(";")[1];
+console.log(nazwisko);
+function sprawdzMail(mail){
+return mail.endsWith(".pl");
+}
+console.log(sprawdzMail("test@wp.pl"));
+let zdanie = "Lubię koty, bo koty są puszyste";
+console.log(zdanie.replace("koty","psy"));
+let imie = "Szymon";
+console.log(imie[0]);
+console.log(imie[imie.length-1]);
+</script>
+</body>
+</html>
